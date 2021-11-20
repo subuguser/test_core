@@ -1,13 +1,5 @@
 # test_core
-1) Установим необходимые пакеты:
 
-apt-get install gcc make linux-headers-$(uname -r)
-
-2) Создаем файл модуля:
-
-mkdir kmod-hello_world
-cd kmod-hello_world/
-touch ./mhello.c
 #define MODULE
 #include <linux/module.h>
 #include <linux/init.h>
@@ -21,6 +13,12 @@ int init_module(void){
 void cleanup_module(void){
     printk("<1> Goodbye.\n");
 }
+
+
+
+
+
+
 3) Создаем Makefile: touch ./Makefile
 
 obj-m += mhello.o
